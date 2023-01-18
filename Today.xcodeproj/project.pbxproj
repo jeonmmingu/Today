@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807D05AE297826F5001D8CCF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D05AD297826F5001D8CCF /* Reminder.swift */; };
 		80D818E3296EFB1D00C85600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D818E2296EFB1D00C85600 /* AppDelegate.swift */; };
 		80D818E5296EFB1D00C85600 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D818E4296EFB1D00C85600 /* SceneDelegate.swift */; };
-		80D818E7296EFB1D00C85600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D818E6296EFB1D00C85600 /* ViewController.swift */; };
+		80D818E7296EFB1D00C85600 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D818E6296EFB1D00C85600 /* ReminderListViewController.swift */; };
 		80D818EA296EFB1D00C85600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D818E8296EFB1D00C85600 /* Main.storyboard */; };
 		80D818EC296EFB1E00C85600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D818EB296EFB1E00C85600 /* Assets.xcassets */; };
 		80D818EF296EFB1E00C85600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D818ED296EFB1E00C85600 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		807D05AD297826F5001D8CCF /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		80D818DF296EFB1D00C85600 /* Today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Today.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D818E2296EFB1D00C85600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D818E4296EFB1D00C85600 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80D818E6296EFB1D00C85600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80D818E6296EFB1D00C85600 /* ReminderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListViewController.swift; sourceTree = "<group>"; };
 		80D818E9296EFB1D00C85600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80D818EB296EFB1E00C85600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80D818EE296EFB1E00C85600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		807D05AC297826D5001D8CCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				807D05AD297826F5001D8CCF /* Reminder.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		80D818D6296EFB1D00C85600 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +66,10 @@
 		80D818E1296EFB1D00C85600 /* Today */ = {
 			isa = PBXGroup;
 			children = (
+				807D05AC297826D5001D8CCF /* Models */,
 				80D818E2296EFB1D00C85600 /* AppDelegate.swift */,
 				80D818E4296EFB1D00C85600 /* SceneDelegate.swift */,
-				80D818E6296EFB1D00C85600 /* ViewController.swift */,
+				80D818E6296EFB1D00C85600 /* ReminderListViewController.swift */,
 				80D818E8296EFB1D00C85600 /* Main.storyboard */,
 				80D818EB296EFB1E00C85600 /* Assets.xcassets */,
 				80D818ED296EFB1E00C85600 /* LaunchScreen.storyboard */,
@@ -138,9 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D818E7296EFB1D00C85600 /* ViewController.swift in Sources */,
+				80D818E7296EFB1D00C85600 /* ReminderListViewController.swift in Sources */,
 				80D818E3296EFB1D00C85600 /* AppDelegate.swift in Sources */,
 				80D818E5296EFB1D00C85600 /* SceneDelegate.swift in Sources */,
+				807D05AE297826F5001D8CCF /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
