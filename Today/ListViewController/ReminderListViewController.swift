@@ -4,6 +4,7 @@ class ReminderListViewController: UICollectionViewController {
     // optional 값을 unwrapping 해서 사용하는 것은 매우 위험하다. 때문에 바로 초기화를 해주는 것이 run time error가 발생하지 않도록 하는 방법이다.
     // 이번 프로젝트 같은 경우 viewDidLoad 오버라이드 함수에서 바로 초기화를 진행한다.
     var dataSource: DataSource!
+    var reminders: [Reminder] = Reminder.sampleData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,23 +24,16 @@ class ReminderListViewController: UICollectionViewController {
         // 데이터 정보를 가지고 있는 cell과 collectionView를 연결
         // Dequeue를 사용한 이유: 매번 cell을 만들어서 등록하는 절차는 매우 cost가 많이 든다. 때문에 Cell을 Reuse하여 사용.(cellRegistration을 통해 구현)
         // item이 혹시 위에 reminder.title이 아닐까 함..
-        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
+        dataSource = DataSource(collectionView: collectionView) { (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: Reminder.ID) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         }
         
-        // << 6th >>
-        var snapshot = Snapshot()
-        // 하나의 섹션을 추가
-        snapshot.appendSections([0])
-        // map function을 사용하면 Reminder.sampleData 중에 title 정보만 가져올 수 있다.
-        snapshot.appendItems(Reminder.sampleData.map { $0.title })
-        // data source에 snapshot을 적용: 스냅샷을 적용한다는 것은 데이터의 변경 사항을 사용자의 interface에 반영한다는 의미이다.
-        dataSource.apply(snapshot)
+        updateSnapshot()
         
         // << 7th >>
         collectionView.dataSource = dataSource
     }
-
+    
     // << 3rd >>
     // list layout에서 section을 만드는 함수이다.
     private func listLayout() -> UICollectionViewCompositionalLayout{

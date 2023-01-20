@@ -2,11 +2,22 @@ import Foundation
 
 // << 1st >>
 // struct는 initialize가 자동으로 이뤄지기 때문에 초기화를 하지 않아도 오류가 발생하지 않는다.
-struct Reminder{
+// Identifiable의 protocol을 따르도록 설정.
+struct Reminder: Identifiable {
+    var id: String = UUID().uuidString // Identifiable의 protocol을 따르게 하기 위해 선언 -> cell을 구분하는 식별자 역할을 함
     var title: String
     var dueDate: Date
     var notes: String? = nil
     var isComplete: Bool = false
+}
+
+extension Array where Element == Reminder {
+    func indexOfReminder(with id: Reminder.ID) -> Self.Index {
+        guard let index = firstIndex(where: { $0.id == id }) else {
+            fatalError()
+        }
+        return index
+    }
 }
 
 // Release 되어 컴파일 되는 경우 실행되지 않도록 동봉하는 플래그이다.
